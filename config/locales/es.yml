@@ -1,0 +1,35 @@
+---
+es:
+  activerecord:
+    errors:
+      messages:
+        attached: debe estar presente
+        taken: ya existe
+        blank: debe existir
+        required: no puede estar en blanco
+    models:
+      user: Usuario
+      about_us_section: Sección
+      academy_contact: Mensaje
+    attributes:
+      user:
+        first_name: Nombre
+        last_name: Apellido
+        dni: Identificación
+        username: Nombre de usuario
+        description: descripción
+        email: email
+        role: rol
+      about_us_section:
+        academy: academia
+        title: título
+        description: descripción
+      academy_contact:
+        name: nombre de usuario
+        email: email
+        message: mensaje
+        academy: academia
+  academy_categories:
+    Technology: Tecnología
+    Finance: Finanzas
+    Languages: Idiomas

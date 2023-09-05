@@ -1,0 +1,27 @@
+image: ruby:3.0.2
+
+cache:
+  paths:
+    - vendor/ruby
+
+before_script:
+  - ruby -v
+  - which ruby
+
+stages:
+  # - test
+  - deploy
+
+# lint-test-job:   # This job also runs in the test stage.
+#   stage: test    # It can run at the same time as unit-test-job (in parallel).
+#   script:
+#     - echo "No lint issues found."
+
+staging:
+  stage: deploy
+  script:
+    - echo "Deploying"
+    - gem install dpl --no-document
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME  --api-key=$HEROKU_API_KEY
+  only:
+    - staging
